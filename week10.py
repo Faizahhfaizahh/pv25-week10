@@ -76,19 +76,19 @@ class MainWindow(QMainWindow):
         self.tableWidget.setRowCount(0)
         for i, row in enumerate(rows):
             self.tableWidget.insertRow(i)
-            self.setReadOnlyItem(i, 0, row[0]) #agar ID tidak dapat diubah/Read-Only
+            # self.setReadOnlyItem(i, 0, row[0]) #agar ID tidak dapat diubah/Read-Only
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(row[0])))    
             self.tableWidget.setItem(i, 1, QTableWidgetItem(row[1]))         
             self.tableWidget.setItem(i, 2, QTableWidgetItem(row[2]))        
-            self.tableWidget.setItem(i, 3, QTableWidgetItem(row[3])) 
+            self.tableWidget.setItem(i, 3, QTableWidgetItem(str(row[3]))) 
             self.tableWidget.setItem(i, 4, QTableWidgetItem(row[4]))         
             self.tableWidget.setItem(i, 5, QTableWidgetItem(row[5]))        
 
     #Function untuk membuat ID tidak bisa diedit/Read-only
-    def setReadOnlyItem(self, row_index, column_index, value):
-        item_id = QTableWidgetItem(str(value))
-        item_id.setFlags(item_id.flags() & ~Qt.ItemIsEditable)
-        self.tableWidget.setItem(row_index, column_index, item_id)
+    # def setReadOnlyItem(self, row_index, column_index, value):
+    #     item_id = QTableWidgetItem(str(value))
+    #     item_id.setFlags(item_id.flags() & ~Qt.ItemIsEditable)
+    #     self.tableWidget.setItem(row_index, column_index, item_id)
 
 
     #Function untuk mencari buku berdasarkan judul
@@ -104,7 +104,7 @@ class MainWindow(QMainWindow):
             self.tableWidget.setItem(i, 0, QTableWidgetItem(str(row[0])))    
             self.tableWidget.setItem(i, 1, QTableWidgetItem(row[1]))        
             self.tableWidget.setItem(i, 2, QTableWidgetItem(row[2]))         
-            self.tableWidget.setItem(i, 3, QTableWidgetItem(row[3]))   
+            self.tableWidget.setItem(i, 3, QTableWidgetItem(str(row[3])))   
             self.tableWidget.setItem(i, 4, QTableWidgetItem(row[4]))        
             self.tableWidget.setItem(i, 5, QTableWidgetItem(row[5]))  
                    
